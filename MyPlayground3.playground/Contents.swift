@@ -48,3 +48,15 @@ var tenthStd = SchoolClass()
 print(tenthStd[1])
 tenthStd[1]="Emmanuel"
 print(tenthStd.students)
+
+struct MathTable{
+    let multiplier:Int
+    subscript(_ index: Int) -> Int{
+        get{
+            return multiplier*index
+        }
+    }
+}
+
+let fifthTable = MathTable(multiplier: 5)
+print(fifthTable[5])
