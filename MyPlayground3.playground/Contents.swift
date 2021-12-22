@@ -68,3 +68,34 @@ let array1 = [1, 2, 3, 4, 5]
 var array2 = array1
 array2.append(6)
 print("\(array1.count) not equal \(array2.count) ; beacuse both are different copy, array is value type")
+
+//Associated types are a powerful way of making protocols generic, Exaple shows below
+
+protocol ItemStoring {
+    associatedtype DataType
+
+    var items: [DataType] { get set}
+    mutating func add(item: DataType)
+}
+
+extension ItemStoring {
+    mutating func add(item: DataType) {
+        items.append(item)
+    }
+}
+
+struct NameDatabase: ItemStoring {
+    var items = [String]()
+}
+
+var names = NameDatabase()
+names.add(item: "James")
+names.add(item: "Jess")
+
+struct IntDatabase: ItemStoring {
+    var items = [Int]()
+}
+
+var arrayInt = IntDatabase()
+
+arrayInt.add(item: 1)
