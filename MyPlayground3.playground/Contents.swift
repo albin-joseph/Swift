@@ -60,3 +60,11 @@ struct MathTable{
 
 let fifthTable = MathTable(multiplier: 5)
 print(fifthTable[5])
+
+/**structs (incl. arrays and dictionaries)
+enumerations
+basic data types (boolean, integer, float, etc.)**/
+let array1 = [1, 2, 3, 4, 5]
+var array2 = array1
+array2.append(6)
+print("\(array1.count) not equal \(array2.count) ; beacuse both are different copy, array is value type")
